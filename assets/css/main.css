@@ -1,0 +1,190 @@
+
+/* -- COMMENTAIRE --
+===============================
+////////////////////////////////
+============================== */
+@font-face{
+  font-family:"MuseoSans100";
+  src:url("fonts/MuseoSans-100.otf");
+}
+@font-face{
+  font-family:"MuseoSans300";
+  src:url("fonts/MuseoSans-300.otf");
+}
+@font-face{
+  font-family:"MuseoSans500";
+  src:url("fonts/MuseoSans_500.otf");
+}
+@font-face{
+  font-family:"MuseoSans700";
+  src:url("fonts/MuseoSans_700.otf");
+}
+@font-face {
+  font-family: "fat_font";
+  src: url("fonts/freefatfont-slanted.otf");
+}
+@font-face{
+  font-family:"robotoligth";
+  src:url("fonts/Roboto-Light.ttf");
+}
+@font-face{
+  font-family:"robotomedium";
+  src:url("fonts/Roboto-Medium.ttf");
+}
+@font-face{
+  font-family:"robotoregular";
+  src:url("fonts/Roboto-Regular.ttf");
+}
+@font-face{
+  font-family:"oswald";
+  src:url("fonts/Oswald-VariableFont_wght.ttf");
+}
+:root {
+  /* -- COLOR -- */
+  --color-black: #0a0a0a;
+  --color-white: #f6f6f6;
+  --color-gray: #dbdbdb;
+  --color-bleu: #8cc1ee;
+  --color-green: #a2d78e;
+  --color-red: #9d4949;
+  --gold: #fcd40b;
+
+
+  /* -- Z INDEX -- */
+  --z_index: 10;
+  /* -- FONT -- */
+  --fatfont: "fat_font";
+  --robotoLith: "robotoligth";
+  --robotoMedium: "robotomedium";
+  --robotoRegular: "robotoregular";
+  --MuseoSans100: "MuseoSans100";
+  --MuseoSans300: "MuseoSans300";
+  --MuseoSans500: "MuseoSans500";
+  --MuseoSans700: "MuseoSans700";
+  --Montserrat-BlackItalic: "Montserrat-BlackItalic";
+  --oswald: "oswald";
+  /* TAILLE FONT */
+  --xs-font: 12px;
+  --s-font: 17px;
+  --m-font: 20px;
+  --l-font: 24px;
+  --xl-font: 30px;
+  --xxl-font: 50px;
+  /* OFFSET */
+  --offset-before: 8px;
+  --offset-after: 16px;
+
+  /* -- BOX-SHADOW -- */
+  --bth-shadow-white: 7px 7px 0 var(--color-white);
+  --bth-shadow-black: 7px 7px 0 var(--color-black);
+  --s-box-shadow: 27px 27px 38px #eaeaea, 27px -27px 38px #ffffff;
+}
+
+
+
+@media all and (min-width: 300px) {
+  html{}
+  body{
+    width: 100%;
+    font-family: var(--MuseoSans100);
+    font-size:var(--s-font);
+    box-sizing: border-box;
+    margin: 0;
+    background-color: var(--color-white);
+  }
+  a{text-decoration:none;}
+  #generale_section{
+    width:100%;
+    background-color:#f2dece;
+    position: relative;
+    overflow: hidden;
+  }
+  .section_global{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  li::marker{
+    content: "";
+  }
+
+  #app{
+    width: 100%;
+    overflow: hidden;
+  }
+  /* -- BASE --
+  ===============================
+  ////////////////////////////////
+  ============================== */
+
+  /* LOGO */
+
+  #logo{
+    padding: .2rem;
+    height: 46px;
+  }
+  .img{
+    width: 280px;
+  }
+
+  /* TITLE */
+  #title{
+    padding:.7rem .7rem;
+    font-size: var(--xxl-font);
+    font-family: var(--MuseoSans300);
+    text-transform: uppercase;
+  }
+  /* BTN RESERVATION */
+  #btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 87px;
+    height: 34px;
+    padding:.7rem .7rem;
+    transition: .5s;
+    background-color: var(--color-black);
+    border-radius: 3px;
+    font-size: var(--xs-font);
+    color: var(--color-white);
+    text-transform: uppercase;
+  }
+  #btn:hover {
+    transition: .5s;
+    background-color: var(--color-white);
+    border:1px solid var(--color-black);
+    color: var(--color-black);
+    box-shadow: var(--bth-shadow-black) ;
+  }
+  #btn .btn{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+  #btn .btn a{
+    color:var(--color-white)
+  }
+  #btn:hover .btn a{
+    color:var(--color-black) ;
+  }
+
+
+  /* BLANK */
+  #blank{
+    height:15vh;
+    width:100%;
+  }
+  .cursor-prev {
+    cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/cursor-prev.cur), auto;
+    cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/cursor-prev.svg) 16 16, auto;
+  }
+
+  .cursor-next {
+    cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/cursor-next.cur), auto;
+    cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/cursor-next.svg) 16 16, auto;
+  }
+
+
+}

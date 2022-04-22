@@ -1,0 +1,52 @@
+#parthenon,
+#back1,
+#back2,
+#back3,
+#back4,
+#back5,
+#back6,
+#back7{
+  position: absolute;
+  transform:translate(-50%,-50%);
+  top: 50%;
+  left: 63%;
+  width: 300px;
+  z-index: -1;
+}
+/* IMAGES POSITION*/
+#back1{
+  top: 0%;
+  transition: .3s ease-in-out;
+}
+#back2{
+  top: 33%;
+  left: 60%;
+}
+#back3{
+  top:83%;
+  transition: .3s ease-in-out;
+}
+#back4{
+  left: 117%;
+  width: 120px;
+  top: -10%;
+}
+#back5{
+  left: -24%;
+  width: 232px;
+  top: 343%;
+}
+
+/* HOVER */
+
+.wrapper-head:hover #back1{
+  top: -5%;
+  transition: .3s ease-in-out;
+}
+.wrapper-head:hover #back3{
+  top:90%;
+  transition: .3s ease-in-out;
+}
+
+
+

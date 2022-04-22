@@ -1,92 +1,59 @@
 <template>
-  <v-app dark>
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-        >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn icon @click.stop="miniVariant = !miniVariant">
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="clipped = !clipped">
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="fixed = !fixed">
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
-      <v-btn icon @click.stop="rightDrawer = !rightDrawer">
-        <v-icon>mdi-menu</v-icon>
-      </v-btn>
-    </v-app-bar>
-    <v-main>
-      <v-container>
-        <Nuxt />
-      </v-container>
-    </v-main>
-    <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light> mdi-repeat </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-footer :absolute="!fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
-  </v-app>
+  <div id="app">
+    <TheHeader/>
+    <div class="wrapper-title">
+      <h1 class="title"> the</h1>
+      <h2 class="title-a">gallery </h2>
+    </div>
+    <div id="blank"></div>
+    <Nuxt/>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'DefaultLayout',
-  data() {
-    return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/',
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
-        },
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js',
-    }
-  },
+  name: 'DefaultLayout'
+
 }
 </script>
+<style>
+.wrapper-title {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper-title .title {
+  margin:0 ;
+  text-transform: uppercase;
+  font-size: 100px;
+  font-family: var(--oswald);
+}
+
+.wrapper-title .title-a {
+  transition: all 0.5s;
+  -webkit-text-stroke: 4px #9ae8e8;
+  font-variation-settings: "wght" 900, "ital" 1;
+  text-align: center;
+  color: transparent;
+  text-shadow: 10px 10px 0 #07bccc,
+  15px 15px 0 #e601c0,
+  20px 20px 0 #e9019a,
+  25px 25px 0 #f40468,
+  45px 45px 10px #482896;
+  cursor: pointer;
+  margin-top: -5.1rem;
+  text-transform: uppercase;
+  font-size: 20vh;
+  font-family: var(--oswald);
+}
+
+.wrapper-title .title-a:hover{
+  font-variation-settings: "wght" 100, "ital" 0;
+  text-shadow: none;
+}
+
+</style>

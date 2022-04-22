@@ -1,0 +1,147 @@
+.grid {
+  display: flex;
+  flex-direction: column;
+  flex-flow: row wrap;
+}
+
+.grid > [class*=column-] {
+  display: block;
+}
+
+.column-xs-12 {
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 62rem) {
+
+  .column-md-4 {
+    flex-basis: 33.3333333333%;
+    max-width: 33.3333333333%;
+  }
+
+  .column-md-6 {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+
+}
+
+@supports (display: grid) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+  }
+  .grid > [class*=column-] {
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .column-xs-12 {
+    grid-column-start: span 12;
+    grid-column-end: span 12;
+  }
+  @media (min-width: 62rem) {
+
+    .column-md-4 {
+      grid-column-start: span 4;
+      grid-column-end: span 4;
+    }
+    .column-md-6 {
+      grid-column-start: span 6;
+      grid-column-end: span 6;
+    }
+  }
+}
+
+*::before, *::after {
+  box-sizing: border-box;
+}
+
+#highlight {
+  color: #ea8478;
+  font-size: 1.25rem;
+}
+
+#project .gallery {
+  padding: 0 0 4rem 0;
+}
+
+#project .img-container {
+  width: 100%;
+  height: 500px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+#project  .img-container:hover .img-content-hover {
+  display: block;
+}
+
+#project .gallery img {
+  width: 100%;
+  height: 500px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+}
+
+#project img:hover {
+  transform: scale(1.05);
+}
+
+#project .img-content-hover {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  display: none;
+  padding: 1rem;
+  background: #fff;
+  font-weight: 400;
+  margin-top: 1.25rem;
+  margin-left: -2rem;
+}
+
+#project .title {
+  color: #2e2e2e;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+#project .category {
+  font-size: 1rem;
+  color: #787878;
+}
+
+#project .img-content {
+  display: none;
+}
+
+@supports (display: grid) {
+  #project .gallery .grid {
+    grid-gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #project  img:hover {
+    transform: none;
+  }
+
+  #project .img-container {
+    height: 100%;
+  }
+
+  #project .img-container:hover .img-content-hover {
+    display: none;
+  }
+
+  #project .img-content {
+    display: block;
+    padding: 1rem 0;
+  }
+}
