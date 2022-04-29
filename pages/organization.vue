@@ -1,17 +1,17 @@
 <template>
   <v-main>
-    <ProjectComponent />
+    <OrganizationComponent />
   </v-main>
 </template>
 
 <script>
-import ProjectComponent from '../components/ProjectComponent.vue'
+import OrganizationComponent from '../components/OrganizationComponent.vue'
 
 export default {
   name: 'App',
 
   components: {
-    ProjectComponent,
+    OrganizationComponent,
   },
 
   data: () => ({
