@@ -1,33 +1,21 @@
 <template>
-  <v-row>
-    <v-col cols="12">
-      <v-expansion-panels>
-        <v-expansion-panel v-for="(item, i) in project" :key="i">
-          <v-expansion-panel-header>
-            {{ item.title }}
-          </v-expansion-panel-header>
-          <v-expansion-panel-content
-            >{{ item.summary }}
-          </v-expansion-panel-content>
-        </v-expansion-panel>
-      </v-expansion-panels>
-    </v-col>
-  </v-row>
+  <v-main>
+    <ProjectComponent />
+  </v-main>
 </template>
 
 <script>
+import ProjectComponent from '../components/ProjectComponent.vue'
+
 export default {
-  name: 'IndexPage',
+  name: 'App',
 
-  data() {
-    return {
-      project: null,
-    }
+  components: {
+    ProjectComponent,
   },
 
-  async mounted() {
-    const { data } = await this.$axios.get('/api/projects')
-    this.project = data['hydra:member']
-  },
+  data: () => ({
+    //
+  }),
 }
 </script>

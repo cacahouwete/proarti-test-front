@@ -1,33 +1,21 @@
 <template>
-  <v-row>
-    <v-col cols="12">
-      <v-expansion-panels>
-        <v-expansion-panel v-for="(item, i) in organization" :key="i">
-          <v-expansion-panel-header>
-            {{ item.name }}
-          </v-expansion-panel-header>
-          <v-expansion-panel-content>
-            {{ item.biography }}
-          </v-expansion-panel-content>
-        </v-expansion-panel>
-      </v-expansion-panels>
-    </v-col>
-  </v-row>
+  <v-main>
+    <OrganizationComponent />
+  </v-main>
 </template>
 
 <script>
+import OrganizationComponent from '../components/OrganizationComponent.vue'
+
 export default {
-  name: 'OrganizationPage',
+  name: 'App',
 
-  data() {
-    return {
-      organization: null,
-    }
+  components: {
+    OrganizationComponent,
   },
 
-  async mounted() {
-    const { data } = await this.$axios.get('/api/organizations')
-    this.organization = data['hydra:member']
-  },
+  data: () => ({
+    //
+  }),
 }
 </script>
